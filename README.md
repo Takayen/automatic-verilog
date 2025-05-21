@@ -1,13 +1,32 @@
 # 修改汇总
 
 ## crossdir.vim
-1.寻找tags文件时，优先自动使用当前vim session所加载的tags文件(如果有复数，则加载第一个)，如果当前vim session没有加载任何tags，则进入原来的控制流程来加载tags文件。
+**1**.寻找tags文件时，优先自动使用当前vim session所加载的tags文件(如果有复数，则加载第一个)，如果当前vim session没有加载任何tags，则进入原来的控制流程来加载tags文件。
 
-2.对tags文件里模块进行正则匹配时，匹配条件加上行末必须为m。
+**2**.对tags文件里模块进行正则匹配时，匹配条件加上行末必须为m。
 
-3.添加对tags文件里的路径为绝对路径时的支持。
+**3**.添加对tags文件里的路径为绝对路径时的支持。
 
 ## rtltree.vim
+
+**1**.fix https://github.com/HonkW93/automatic-verilog/issues/44
+，原因在于：
+```
+    function s:GetModuleInst(lines,mname)
+        let lines = s:RemoveCommentLine(a:lines)
+        let lines = g:AutoVerilog_RsvModuleLine(a:lines,a:mname)
+```
+第二句代入使用的参数是a:lines，修改为lines即可。
+
+
+
+**2**.更换s:rtltree变量的key
+
+verilog的实例名，在同一个模块下不可重名，但是以整个project来说，单个实例的名称是可以重复的。
+
+对于实例来说，只有该实例的路径在一个project里是绝对唯一的。
+
+原先的key为实例名称，修改为该实例的路径（例： moduleA → top.moduleAA.moduleA )，并修正rtltree展开逻辑，保证功能正常
 
 # automatic-verilog
 
