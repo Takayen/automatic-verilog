@@ -1,3 +1,11 @@
+#修改汇总
+
+## crossdir.vim
+1.寻找tags文件时，优先自动使用当前vim session所加载的tags文件(如果有复数，则加载第一个)，如果当前vim session没有加载任何tags，则进入原来的控制流程来加载tags文件。
+2.对tags文件里模块进行正则匹配时，匹配条件加上行末必须为m
+3.添加对tags文件里的路径为绝对路径时的支持
+
+
 # automatic-verilog
 
 ---
