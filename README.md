@@ -1,4 +1,9 @@
 # 修改汇总
+## snippet.vim
+**1**.删除Header和补完功能。(补完功能使用Nerdcommenter)
+
+**2**.删除原代码段，添加自用代码段。非导入模板而是动态生成代码段（可在生成前通过副窗口手动设置clk，rst，state等名称）
+
 
 ## crossdir.vim
 **1**.寻找tags文件时，优先自动使用当前vim session所加载的tags文件(如果有复数，则加载第一个)，如果当前vim session没有加载任何tags，则进入原来的控制流程来加载tags文件。
