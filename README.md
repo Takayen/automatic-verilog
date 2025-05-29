@@ -33,6 +33,22 @@ verilog的实例名，在同一个模块下不可重名，但是以整个project
 
 原先的key为实例名称，修改为该实例的路径（例： moduleA → top.moduleAA.moduleA )，并修正rtltree展开逻辑，保证功能正常
 
+**3**.添加实例补完功能
+
+功能依赖RTLtree，且起点必须从当前rtltree的top或者top下面的第一层开始展开
+
+可在补完子实例和内部信号切换。
+
+支持对define macro的解读（前提是必须使用tags来跨文件夹）
+
+**4**.添加导出filelist功能
+
+可通过副窗口设置导出路径，排序关键词等（仿真时有些定义了macro的文件必须在使用该macro的文件之前被读取，无关设置TOP永远在filelist第一行）
+
+## autopin.vim
+
+## autosync.vim
+
 # automatic-verilog
 
 ---
