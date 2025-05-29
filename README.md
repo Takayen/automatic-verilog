@@ -1,6 +1,6 @@
 # 修改汇总
 ## snippet.vim
-**1**.删除Header和补完功能。(补完功能使用Nerdcommenter)
+**1**.删除Header和注释功能。(注释功能使用Nerdcommenter)
 
 **2**.删除原代码段，添加自用代码段。非导入模板而是动态生成代码段（可在生成前通过副窗口手动设置clk，rst，state等名称）
 
